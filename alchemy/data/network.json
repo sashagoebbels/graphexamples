@@ -1,0 +1,73 @@
+{
+  "comment": "Test data",
+  "nodes": [
+    {
+      "caption": "Node 1",
+      "type": "node",
+      "role": "greenone",
+      "id": 1
+    },
+    {
+      "caption": "Node 2",
+      "type": "node",
+      "role": "greyone",
+      "id": 2
+    },
+    {
+      "caption": "Node 3",
+      "type": "node",
+      "role": "greyone",
+      "id": 3
+    },
+    {
+      "caption": "Node 4",
+      "type": "node",
+      "role": "greyone",
+      "id": 4
+    },
+    {
+      "caption": "Node 5",
+      "type": "node",
+      "role": "greyone",
+      "id": 5
+    },
+    {
+      "caption": "Node 6",
+      "type": "node",
+      "role": "greyone",
+      "id": 6
+    }
+  ],
+  "edges": [
+    {
+      "source": 1,
+      "target": 3,
+      "caption": "greyone"
+    },
+    {
+      "source": 1,
+      "target": 2,
+      "caption": "greyone"
+    },
+    {
+      "source": 2,
+      "target": 4,
+      "caption": "redone"
+    },
+    {
+      "source": 2,
+      "target": 5,
+      "caption": "redone"
+    },
+    {
+      "source": 4,
+      "target": 5,
+      "caption": "redone"
+    },
+    {
+      "source": 4,
+      "target": 6,
+      "caption": "greyone"
+    }
+  ]
+}

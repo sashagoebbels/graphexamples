@@ -1,0 +1,3 @@
+# Common third party files and libraries
+
+Code used by all the examples. Not everything is needed for every example ...

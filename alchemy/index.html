@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/graphs/common/alchemy/alchemy.css"/>
+    <script src="/graphs/common/jquery-2.1.3.js"></script>
+    <script src="/graphs/common/d3.js"></script>
+    <script src="/graphs/common/lodash.js"></script>
+</head>
+<body>
+<div class="alchemy" id="alchemy"></div>
+<script src="/graphs/common/alchemy/alchemy.js"></script>
+<script type="text/javascript">
+    var config = {
+        dataSource: '/graphs/alchemy/data/network.json',
+        graphWidth: function() {return 800},
+        graphHeight: function() {return 500},
+        backgroundColor: "#ffffff",
+        nodeCaptionsOnByDefault: true,
+        caption: function(node){
+            return node.caption;
+        },
+        nodeTypes: {
+            "role": ["greyone", "greenone"]
+        },
+        edgeTypes: {
+            "caption": ["greyone", "redone"]
+        },
+        nodeStyle: {
+            "greyone": {
+                color: "#888888",
+                borderWidth: 0,
+                radius: 15
+            },
+            "greenone": {
+                color: "#88cc88",
+                borderWidth: 0,
+                radius: 15
+            }
+        },
+        edgeStyle: {
+            "greyone": {
+                color: "#888888",
+                width: 3
+            },
+            "redone": {
+                color: "#ff8888",
+                width: 3
+            }
+        }
+    };
+    alchemy = new Alchemy(config)
+</script>
+</body>
+</html>
