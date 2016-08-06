@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        #cy {
+            width: 800px;
+            height: 500px;
+        }
+    </style>
+    <script src="/graphs/common/cola.js"></script>
+    <script src="/graphs/common/cytoscape.js"></script>
+    <script src="/graphs/common/cytoscape-cola.js"></script>
+</head>
+<body>
+<div id="cy"></div>
+<script type="application/javascript">
+    var elems = [
+        {data: {id: '1', name: 'Node 1', nodecolor: '#88cc88'}},
+        {data: {id: '2', name: 'Node 2', nodecolor: '#888888'}},
+        {data: {id: '3', name: 'Node 3', nodecolor: '#888888'}},
+        {data: {id: '4', name: 'Node 4', nodecolor: '#888888'}},
+        {data: {id: '5', name: 'Node 5', nodecolor: '#888888'}},
+        {data: {id: '6', name: 'Node 6', nodecolor: '#888888'}},
+        {
+            data: {
+                id: '12',
+                source: '1',
+                target: '2',
+                linkcolor: '#888888'
+            },
+        },
+        {
+            data: {
+                id: '13',
+                source: '1',
+                target: '3',
+                linkcolor: '#888888'
+            },
+        },
+        {
+            data: {
+                id: '24',
+                source: '2',
+                target: '4',
+                linkcolor: '#ff8888'
+            },
+        },
+        {
+            data: {
+                id: '25',
+                source: '2',
+                target: '5',
+                linkcolor: '#ff8888'
+            },
+        },
+        {
+            data: {
+                id: '45',
+                source: '4',
+                target: '5',
+                linkcolor: '#ff8888'
+            }
+        },
+        {
+            data: {
+                id: '46',
+                source: '4',
+                target: '6',
+                linkcolor: '#888888'
+            }
+        }];
+    var cy = cytoscape({
+        container: document.getElementById('cy'),
+        elements: elems,
+        style: cytoscape.stylesheet()
+                .selector('node').style({
+                    'background-color': 'data(nodecolor)',
+                    label: 'data(name)',
+                    width: 25,
+                    height: 25
+                })
+                .selector('edge').style({
+                    'line-color': 'data(linkcolor)',
+                    width: 3
+                })
+    });
+    cy.layout({name: 'cola', padding: 10});
+</script>
+</body>
+</html>
